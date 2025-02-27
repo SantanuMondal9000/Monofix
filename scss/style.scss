@@ -1,0 +1,522 @@
+@import 'variable';
+
+// Reset area
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 3.5rem;
+}
+
+h3 {
+    text-transform: initial;
+    font-style: italic;
+    font-family: $second-header-font;
+    transform: skewX(-10deg);
+    font-size: 2rem;
+}
+
+p {
+    text-transform: initial;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+
+
+}
+
+// End reset area
+
+// Default area
+.icon-after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+a {
+    text-decoration: none;
+    transition: background-color 0.4s, color 0.4s ease;
+    display: inline-block;
+    font-weight: 500;
+}
+
+.breaking-point {
+    display: block;
+}
+
+// End Default area
+
+// Header part
+.header-contact {
+    background-color: $light-blue-color;
+
+    a {
+        position: relative;
+        padding-left: 20px;
+
+        &::before {
+            @extend .icon-after;
+            left: 0;
+            background-image: url("../assets/icons/call.svg");
+        }
+
+        &:hover {
+            color: $primary-orange-color;
+
+        }
+
+    }
+
+    ul {
+        &:first-child {
+            font-weight: 500;
+        }
+    }
+}
+
+nav {
+    ul {
+        display: flex;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            &:nth-child(1) {
+                position: relative;
+            }
+
+            &:nth-child(1)::after {
+                @extend .icon-after;
+                background-image: url("../assets/icons/dropdown.png");
+                filter: invert(1);
+                width: 8px;
+                height: 8px;
+                right: 8px;
+            }
+
+            a {
+                text-transform: uppercase;
+                color: black;
+                padding: 15px 25px;
+                font-size: 0.95rem;
+
+
+                &:hover {
+                    color: $light-blue-color;
+                }
+
+            }
+        }
+    }
+
+
+
+
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+        margin: 0;
+        padding: 0;
+
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+
+
+.header-contact {
+    li span {
+        color: $primary-orange-color;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    a {
+        color: black;
+        font-weight: bold;
+        font-size: 1.2rem;
+
+    }
+}
+
+.primary-button {
+    background-color: $primary-orange-color;
+    color: white;
+    padding: 15px 30px;
+    text-transform: uppercase;
+
+    &:hover {
+        background-color: white;
+        color: black;
+    }
+}
+
+// End header part
+// Banner part
+.banner {
+    background-image: url("../assets/images/Rectangle-13.png");
+    background-size: cover;
+    background-position: center;
+    height: 900px;
+}
+
+.banner-text-area {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    max-width: 50%;
+
+    *:not(:last-child) {
+        margin-bottom: 40px;
+    }
+
+    h1 {
+        color: white;
+        text-transform: uppercase;
+        font-size: 4rem;
+        font-weight: 900;
+
+    }
+}
+
+// End banner
+// Service time area
+.service-time-wrapper {
+    display: flex;
+
+    .model-image-block {
+        background-image: url("../assets/images/Rectangle-1.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .service-time-content-part {
+
+        .text-part {
+            padding: 120px;
+
+            *:not(:first-child) {
+                margin-top: 30px;
+            }
+
+            h3 {
+                color: $light-blue-color;
+                font-style: italic;
+            }
+        }
+    }
+}
+
+// End service time area
+// Question area
+.question-area {
+    background-color: $light-blue-color;
+    padding: 80px 0;
+
+    .question-area-wrapper {
+
+
+        .visit-faq {
+            padding: 0 25px;
+
+            *:not(:first-child) {
+                margin-top: 30px;
+            }
+
+            h2 {
+                font-size: 3rem;
+
+            }
+
+            h3 {
+                font-style: italic;
+
+            }
+        }
+
+        .question-collapse {
+
+            ul {
+
+                li {
+                    padding: 45px 0;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    font-size: 1.4rem;
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+                    position: relative;
+
+                    &::after {
+                        @extend .icon-after;
+                        background-image: url("../assets/icons/plus-icon.svg");
+                    }
+                }
+            }
+
+            #accordion {
+                .card {
+                    background-color: transparent;
+                    border: none;
+
+                    .card-header {
+                        background-color: transparent;
+                        display: flex;
+                        justify-content: space-between;
+                        padding: 15px 0;
+
+                        a {
+                            font-size: 1.3rem;
+                            text-transform: uppercase;
+                            font-weight: 600;
+                            border: none;
+                            padding-left: 0;
+
+
+
+                        }
+
+
+                    }
+
+                    .card-body {
+
+                        p {
+                            font-size: 1.35rem;
+                            line-height: 1.8rem;
+                        }
+
+                        & {
+                            padding-left: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// End Question area
+
+// Declaration area
+.declaration-area {
+    text-align: center;
+    padding: 130px 0;
+
+    h4,
+    p {
+        margin-bottom: 40px !important;
+    }
+
+    h4 {
+        text-transform: capitalize;
+    }
+
+    p {
+        text-transform: initial;
+        width: 60%;
+        margin: 0 auto;
+        font-style: italic;
+        font-size: 2.2rem;
+        color: $light-blue-color;
+        font-weight: 600;
+        font-family: $second-header-font;
+        transform: skew(-15deg);
+    }
+
+    .star-icon {
+        color: black;
+        font-size: 30px;
+
+
+    }
+
+}
+
+// End Declaration area
+// Story 
+.story {
+    background-color: $light-blue-color;
+
+    .story-wrapper {
+        margin: 0;
+        width: 100%;
+
+        .story-item {
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            *:not(:first-child) {
+                margin-top: 40px;
+            }
+
+            padding: 0;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .story-item:nth-child(2),
+        .story-item:nth-child(3) {
+            padding: 120px;
+        }
+
+        .story-item:nth-child(3) {
+            background-color: #e8ded2;
+        }
+
+        .story-item:first-child {
+            background-image: url("../assets/images/Rectangle-12.png");
+        }
+
+        .story-item:last-child {
+            background-image: url("../assets/images/Rectangasdle-12.png");
+        }
+    }
+}
+
+// End story
+// Footer
+footer {
+    background-color: #9bb8d3;
+    padding: 100px 0;
+
+    .footer-wrapper {
+        display: flex;
+        justify-content: space-between;
+
+        .footer-item:first-child {
+            p {
+                font-size: 1rem;
+                line-height: 1.2rem;
+            }
+
+
+            a {
+                font-size: 1rem;
+                font-weight: 300;
+                padding: 0;
+                text-transform: none;
+
+            }
+
+            ul:first-of-type {
+                margin-bottom: 15px;
+
+            }
+        }
+
+        .footer-item {
+
+            h4,
+            a,
+            input[type="submit"] {
+                text-transform: uppercase;
+            }
+
+            p,
+            input[type="submit"] {
+                margin-top: 30px;
+            }
+
+
+            h4 {
+                font-size: 1rem;
+                font-weight: bold;
+                margin-bottom: 15px;
+            }
+
+            ul {
+                li {
+                    a {
+
+                        color: black;
+                        font-size: 1.3rem;
+                        font-weight: 500;
+                        padding: 2px 0;
+
+                        &:hover {
+                            color: white;
+                        }
+                    }
+                }
+            }
+
+            form {
+                input[type="text"] {
+                    background-color: transparent;
+                    border: 1px solid rgba(255, 255, 255, 0.7);
+                    padding: 15px 0;
+                    padding-left: 15px;
+
+
+                    &::placeholder {
+                        text-transform: capitalize;
+                        color: white;
+
+                    }
+                }
+
+                input[type="submit"] {
+                    background-color: $primary-orange-color;
+                    padding: 15px 0;
+
+                }
+
+                input {
+                    width: 100%;
+                    display: block;
+                    border: none;
+                    outline: none;
+                    color: white;
+                }
+            }
+
+            p {
+                font-size: 1rem;
+                line-height: 1.3rem;
+
+                span {
+                    a {
+                        text-decoration: underline;
+                        color: black;
+                        padding: 0;
+                        text-transform: capitalize;
+                        font-size: 1rem;
+                    }
+                }
+            }
+
+        }
+
+        .footer-item:last-child {
+            width: 35%;
+
+        }
+
+    }
+}
+
+
+// End Footer
